@@ -3,11 +3,6 @@ from django.test import Client, TestCase
 from django.urls import reverse
 from lettings.models import Letting, Address
 
-"""
-chaque test doit demander l'URI correspondant, qui ne doit pas être codé en dur, par exemple utiliser lettings:index et la fonction reverse au lieu d’utiliser /lettings,
-comme chaque page du site contient un élément de titre, chaque test doit le vérifier dans le HTML de la réponse ;
-"""
-
 
 @pytest.mark.django_db
 class TestLettings(TestCase):
