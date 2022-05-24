@@ -54,7 +54,7 @@ jobs:
       - run:
           TAG=0.1.$CIRCLE_BUILD_NUM
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker build -t PedrolitoLsg/DAPYTHON-OPC-P13:$TAG .
+          docker build PedrolitoLsg/DAPYTHON-OPC-P13:$TAG .
           docker tag PedrolitoLsg/DAPYTHON-OPC-P13:$TAG PedrolitoLsg/DAPYTHON-OPC-P13:latest
           docker push PedrolitoLsg/DAPYTHON-OPC-P13:$TAG
           docker push PedrolitoLsg/DAPYTHON-OPC-P13:latest
