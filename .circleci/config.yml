@@ -49,9 +49,15 @@ jobs:
       - image: cimg/python:3.10.2
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: 17.09.0-ce
       - run:
-          setup_remote_docker
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker build -t PedrolitoLsg/DAPYTHON-OPC-P13:$TAG .
+          docker tag PedrolitoLsg/DAPYTHON-OPC-P13:$TAG PedrolitoLsg/DAPYTHON-OPC-P13:latest
+          docker push PedrolitoLsg/DAPYTHON-OPC-P13:$TAG
+          docker push PedrolitoLsg/DAPYTHON-OPC-P13:latest
 
 
   deploy-heroku:
