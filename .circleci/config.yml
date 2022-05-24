@@ -83,7 +83,7 @@ workflows:
       - deploy-heroku:
           requires:
             - build-and-push
-            filters:
-              branches:
-                only:
-                  - master
+          filters:
+            branches:
+              only:
+                - master
