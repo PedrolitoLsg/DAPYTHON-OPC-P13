@@ -55,7 +55,7 @@ jobs:
 
 
   deploy-heroku:
-    executor: heroku
+    executor: heroku/default
     steps:
       - checkout
       - heroku/install
