@@ -54,7 +54,7 @@ jobs:
       - run:
           TAG=0.1.$CIRCLE_BUILD_NUM
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker build pierrelesage/dapythonp13:$TAG .
+          docker build -t pierrelesage/dapythonp13:$TAG .
           docker tag pierrelesage/dapythonp13:$TAG pierrelesage/dapythonp13:latest
           docker push pierrelesage/dapythonp13:$TAG
           docker push pierrelesage/dapythonp13:latest
