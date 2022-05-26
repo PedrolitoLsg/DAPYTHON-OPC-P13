@@ -43,7 +43,7 @@ jobs:
           # This assumes pytest is installed via the install-package step above
           command: flake8
 
-
+"""
   build-and-push:
     docker:
       - image: cimg/python:3.10.2
@@ -55,12 +55,12 @@ jobs:
           docker_layer_caching: true
       - run:
           TAG=0.1.$CIRCLE_BUILD_NUM
-          echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
           docker build pierrelesage/dapythonp13:$TAG .
           docker tag pierrelesage/dapythonp13:$TAG pierrelesage/dapythonp13:latest
           docker push pierrelesage/dapythonp13:$TAG
           docker push pierrelesage/dapythonp13:latest
-
+"""
 
   deploy-heroku:
     executor: heroku/default
