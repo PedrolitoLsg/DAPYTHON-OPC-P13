@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 
 
 sentry_sdk.init(
-    os.environ.get("SENTRY_DSN"),
+    dsn="https://6c13abc80ea54bfd9d7914a8556d9cd3@o1265906.ingest.sentry.io/6459397",
     integrations=[DjangoIntegration()],
     environment="production",
 
