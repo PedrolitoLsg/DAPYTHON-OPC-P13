@@ -79,9 +79,9 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 ### Prérequis
 Dans les Project settings du compte créé sur Heroku enregistrer les variables d'environnement suivantes:
-DOCKER_PASS: Mot de passe Docker
-DOCKER_USER: Nom de compte sur docker
-HEROKU_API_KEY: clé d'accès
-HEROKU_APP_NAME: Nom de l'app dans heroku
-SENTRY_DSN: lien du client Key DSN
+- DOCKER_PASS: Mot de passe Docker
+- DOCKER_USER: Nom de compte sur docker
+- HEROKU_API_KEY: clé d'accès
+- HEROKU_APP_NAME: Nom de l'app dans heroku
+- SENTRY_DSN: lien du client Key DSN
 
